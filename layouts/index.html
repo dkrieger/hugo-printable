@@ -1,0 +1,20 @@
+<head>
+{{ partial "head" . }}
+</head>
+<body>
+  <main style="position:absolute;top:30%;transform:translateY(-50%);">
+    <h1>{{.Site.Title}}</h1>
+    {{ .Param "description" }}
+    {{ with .Page.Content }}
+      {{ . }}
+    {{ end }}
+    <div class="no-print">
+      {{ with .Site.GetPage "/overview" }}
+      <a href="{{.URL}}">{{ .Title }}</a>
+      {{ end }}
+    </div>
+    {{ with .Site.GetPage "_footer.md" }}
+    {{ .Content }}
+    {{ end }}
+  </main>
+</body>

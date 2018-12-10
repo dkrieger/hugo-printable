@@ -1,0 +1,5 @@
+{{ with .Site.GetPage "_footer.md" }}
+<hr>
+{{ partial "sitelink" . }}
+{{ .Content }}
+{{ end }}
